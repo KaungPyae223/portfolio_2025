@@ -11,7 +11,7 @@ const page = () => {
       <AboutIntro />
       <Education />
       <Skill />
-      <p></p>
+      <p>Hello</p>
     </div>
   );
 };
