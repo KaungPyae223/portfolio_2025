@@ -2,7 +2,20 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supbaseClient";
 
 export const useGetAllProjects = () => {
-  const [data, setData] = useState<any[]>([]);
+  type ProjectItem = {
+    Projects: {
+      id: number;
+      image: string;
+      name: string;
+      description: string;
+      frontend: string;
+      backend: string;
+      demo: string;
+      tech: string;
+    };
+  };
+
+  const [data, setData] = useState<ProjectItem[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
