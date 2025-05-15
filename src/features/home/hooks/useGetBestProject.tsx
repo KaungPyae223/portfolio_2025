@@ -17,7 +17,7 @@ export const useGetBestProject = () => {
     Projects: Project[];
   };
 
-  const [data, setData] = useState<ProjectItem[]>([]);
+  const [data, setData] = useState<Project[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
