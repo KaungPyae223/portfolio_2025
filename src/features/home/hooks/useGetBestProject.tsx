@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supbaseClient";
 
 export const useGetBestProject = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<{ Projects: any[] }[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
