@@ -1,15 +1,25 @@
 import Image from "next/image";
 import React from "react";
 
+type Props = {
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+  frontendLink: string;
+  backendLink: string;
+  demoLink: string;
+};
+
 const ProjectCard = ({
   title,
   description,
   image,
-  tech = [],
+  tech,
   frontendLink,
   backendLink,
   demoLink,
-}) => {
+}: Props) => {
   return (
     <div className="bg-white dark:bg-gray-800 flex flex-col shadow-lg rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-[1.03] h-full">
       <Image
