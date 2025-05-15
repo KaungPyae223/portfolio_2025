@@ -52,9 +52,22 @@ const MyProject = () => {
     return () => ctx.revert();
   }, []);
 
-  const data = useGetBestProject();
-
   const router = useRouter();
+
+  type ProjectItem = {
+    Projects: {
+      id: number;
+      image: string;
+      name: string;
+      description: string;
+      frontend: string;
+      backend: string;
+      demo: string;
+      tech: string;
+    };
+  };
+
+  const data: ProjectItem[] = useGetBestProject();
 
   return (
     <div className="lg:mx-auto max-w-6xl m-5 my-10 pt-20 transition-colors duration-300">

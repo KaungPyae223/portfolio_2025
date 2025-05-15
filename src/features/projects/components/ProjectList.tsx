@@ -6,7 +6,20 @@ import ProjectCard from "@/features/public/ProjectCard";
 import { useGetAllProjects } from "../hooks/useGetAllProjects";
 
 const ProjectList = () => {
-  const data = useGetAllProjects();
+  type ProjectItem = {
+    Projects: {
+      id: number;
+      image: string;
+      name: string;
+      description: string;
+      frontend: string;
+      backend: string;
+      demo: string;
+      tech: string;
+    };
+  };
+
+  const data: ProjectItem[] = useGetAllProjects();
 
   const [activeFilter, setActiveFilter] = useState("all");
 
