@@ -1,6 +1,11 @@
+"use client";
+import { useContact } from "@/features/contact/hooks/useContact";
 import React from "react";
 
 const Contact = () => {
+  const { handleChange, handleSubmit, formData, loading, success } =
+    useContact();
+
   return (
     <section className="min-h-screen py-16 px-4 ">
       <div className="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-xl p-8">
@@ -47,13 +52,16 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
                 Name
               </label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-800 dark:text-gray-100"
                 placeholder="Your Name"
               />
@@ -64,6 +72,9 @@ const Contact = () => {
               </label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-800 dark:text-gray-100"
                 placeholder="your@email.com"
               />
@@ -73,16 +84,25 @@ const Contact = () => {
                 Message
               </label>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:bg-gray-800 dark:text-gray-100"
                 placeholder="Your message..."
               ></textarea>
             </div>
             <button
               type="submit"
+              disabled={loading}
               className="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold px-6 py-2 rounded-lg shadow transition"
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
+            {success && (
+              <p className="text-green-600 font-medium pt-2">
+                Message sent successfully!
+              </p>
+            )}
           </form>
         </div>
       </div>

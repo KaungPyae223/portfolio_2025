@@ -19,7 +19,7 @@ const educationData = [
   {
     title: "MMSIT",
     description:
-      "During attending the diploma, I knew the web development class called MMSIT. MMSIT gives basic website development class free and so I attended it. Because of MMSIT's teacher Hein Htet Zan teaching, I am very interested in web development and I decided to make web developer. After basic class, I join the Special web development class and from that I studied the React development. After SWD, I also studied the backed development in MMSIT. Although, backend development is still studying and not finished.",
+      "During attending the diploma, I knew the web development class called MMSIT. MMSIT gives basic website development class free and so I attended it. Because of MMSIT's teacher Hein Htet Zan teaching, I am very interested in web development and I decided to make web developer. After basic class, I join the Special web development class and Web application development class and from that I studied the React and Laravel development. After SWD, and WAD, I Joined the coding work shop from it and have an real world experience under the control of the Sayar Hein Htet Zan",
   },
 ];
 

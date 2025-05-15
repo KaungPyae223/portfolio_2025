@@ -19,7 +19,7 @@ const skillsData = [
   {
     title: "Java Script",
     description:
-      "From MMSIT I have studied the vanilla js well and I think I can use the java script well.",
+      "From MMSIT, I have studied the vanilla js well and I think I can use the java script well.",
   },
   {
     title: "Tailwind",
@@ -29,7 +29,17 @@ const skillsData = [
   {
     title: "React",
     description:
-      "React is the I mostly used javascript framework. I have been used the popular React libraries such as GSAP, Framer motion, chartjs and others. I require many knowledge to expert the react but I think I can make the project react well.",
+      "React is the I mostly used javascript framework. I have been used the popular React libraries such as GSAP, Framer motion, chartjs and others.",
+  },
+  {
+    title: "Next.js",
+    description:
+      "Next.js is my primary used framework for development. Because of Next.js server side rendering and client side rendering, easy to manage the SEO optimization and performance of the application",
+  },
+  {
+    title: "Laravel",
+    description:
+      "Laravel is my primary framework to develop the backend application. I used the Laravel repository pattern to develop the application and have an can use the Eloquent ORM well.",
   },
 ];
 
