@@ -38,13 +38,13 @@ const AboutIntro = () => {
     <div className="m-20 lg:mx-28 mx-5 grid md:grid-cols-2 grid-cols-1 gap-10 overflow-hidden">
       <div className="left">
         <p className="text-5xl mb-10 leading-[5rem] ">
-          <span className="p-3 px-6 font-medium rounded-xl bg-yellow-300">
+          <span className="p-3 px-6 font-medium rounded-xl bg-yellow-300 dark:bg-yellow-500/20 dark:text-yellow-300">
             Introduction
           </span>{" "}
           of My Story
         </p>
         <p className="text-justify mt-10 mb-5">
-          <span className="ms-20"></span>Hi my name is Kaung Pyae Aung and
+          <span className="ms-16"></span>Hi my name is Kaung Pyae Aung and
           currently finished the Bachelor of Computing in University of
           Greenwich. I also have completed the NCC Level 5, Level 4. I have
           focused on full stack web development, starting my studies at MMSIT,
@@ -52,7 +52,7 @@ const AboutIntro = () => {
           under the control of Sayar Hein Htet Zan.
         </p>
         <p className="text-justify mt-10 mb-5">
-          <span className="ms-20"></span>Throughout my developer journey, I have
+          <span className="ms-16"></span>Throughout my developer journey, I have
           worked on various assignments, self-initiated projects, 
           workshop programs and gaining practical experience in HTML, CSS,
           JavaScript, Tailwind CSS, React, Next.js and Laravel. While I

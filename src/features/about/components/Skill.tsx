@@ -59,7 +59,7 @@ const Skill = () => {
           {
             x: 100,
             opacity: 0,
-            duration: 0.8,
+            duration: 1.2,
           },
           0
         );
@@ -73,7 +73,7 @@ const Skill = () => {
       <div>
         <p className="text-4xl md:text-5xl mb-10 skillLeft leading-tight md:leading-[5rem] font-sans text-gray-800 dark:text-white">
           My{" "}
-          <span className="p-2 md:p-3 rounded-xl px-4 md:px-6 font-medium bg-yellow-300">
+          <span className="p-2 md:p-3 rounded-xl px-4 md:px-6 font-medium dark:bg-yellow-500/20 dark:text-yellow-300 bg-yellow-300">
             Skills
           </span>{" "}
           Description

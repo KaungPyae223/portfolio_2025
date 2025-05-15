@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="transition-colors duration-300 bg-white text-black dark:bg-gray-900 dark:text-white">
         <header>
           <NavBar />
         </header>

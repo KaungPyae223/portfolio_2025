@@ -50,13 +50,13 @@ const Education = () => {
           height={500}
           alt="Skill Photo"
           className="xl:w-2/3 w-full h-full object-cover rounded-lg shadow-lg" // Added some styling for the image
-          src={"/Skills.png"}
+          src={"/Education.png"}
         />
       </div>
       <div className="row-start-1 md:col-start-2">
         <p className="text-5xl mb-10 educationUp leading-[5rem]">
           My{" "}
-          <span className="p-3 px-6 font-medium rounded-xl bg-yellow-300">
+          <span className="p-3 px-6 font-medium rounded-xl dark:bg-yellow-500/20 dark:text-yellow-300 bg-yellow-300">
             Education
           </span>{" "}
           Journey

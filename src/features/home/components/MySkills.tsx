@@ -26,8 +26,10 @@ const MySkills = () => {
   }, []);
 
   return (
-    <div className="my-20 homeSkill p-10 rounded-xl mx-auto w-fit bg-white shadow-xl">
-      <p className="text-3xl font-semibold text-center">My Technical Skills</p>
+    <div className="my-20 homeSkill p-10 rounded-xl mx-auto w-fit bg-white dark:bg-gray-800 shadow-xl dark:shadow-lg transition-colors duration-300">
+      <p className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-100 transition-colors duration-300">
+        My Technical Skills
+      </p>
       <div className="mt-10 grid grid-cols-3 sm:grid-cols-4 gap-10 place-items-center">
         <Image
           width={100}

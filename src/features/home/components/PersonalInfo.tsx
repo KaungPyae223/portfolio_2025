@@ -1,3 +1,5 @@
+"use client";
+
 import gsap from "gsap";
 import React, { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,7 +35,7 @@ const PersonalInfo = () => {
   }, []);
 
   return (
-    <section className="profileContainer my-20 px-6 lg:px-20 grid md:grid-cols-2 gap-16 overflow-hidden items-center">
+    <section className="profileContainer my-20 px-6 lg:px-20 grid md:grid-cols-2 gap-16 overflow-hidden items-center transition-colors duration-300">
       <div className="left flex justify-center">
         <Image
           className="rounded-2xl shadow-xl w-full max-w-sm object-cover"
@@ -44,10 +46,11 @@ const PersonalInfo = () => {
         />
       </div>
 
-      <div className="right space-y-6 text-gray-800 dark:text-gray-200">
+      <div className="right space-y-6 text-gray-800 dark:text-gray-200 transition-colors duration-300">
         <h2 className="text-4xl font-bold text-yellow-600 dark:text-yellow-400">
           Short Bio
         </h2>
+
         <div className="space-y-3">
           <div className="grid grid-cols-[120px_1fr] gap-y-2 text-base">
             <span className="font-semibold">Name:</span>
@@ -84,13 +87,14 @@ const PersonalInfo = () => {
           </div>
         </div>
 
-
-        <button className="mt-6 px-6 py-2 bg-yellow-500 cursor-pointer hover:bg-yellow-700 text-white rounded-full transition duration-300 shadow-md">
-          View Details
-        </button>
-        <button className="mt-6 px-6 py-2 border ms-4 cursor-pointer text-gray-700 border-yellow-500 rounded-full transition duration-300 shadow-md">
-          View CV
-        </button>
+        <div className="flex flex-wrap gap-4">
+          <button className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-full transition-colors duration-300 shadow-md">
+            View Details
+          </button>
+          <button className="px-6 py-2 border border-yellow-500 text-gray-700 dark:text-gray-200 hover:text-white hover:bg-yellow-500 dark:hover:bg-yellow-600 rounded-full transition-colors duration-300 shadow-md">
+            View CV
+          </button>
+        </div>
       </div>
     </section>
   );

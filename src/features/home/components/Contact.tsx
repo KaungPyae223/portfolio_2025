@@ -45,7 +45,7 @@ const Contact = () => {
         <p className="text-5xl leading-[5rem]">
           Get in touch <span className="md:block"></span>
           with me{" "}
-          <span className="p-3 px-6 font-medium rounded-xl bg-yellow-300">
+          <span className="p-3 px-6 font-medium rounded-xl bg-yellow-300 dark:bg-yellow-500/20 dark:text-yellow-300">
             Anytime
           </span>
         </p>
