@@ -86,7 +86,7 @@ const NavBar = () => {
       >
         <div className="bg-white dark:bg-gray-800 border border-white/50 shadow-lg p-3 rounded-full flex items-center gap-5 transition-colors">
           <p className="font-medium px-5 text-lg hidden md:block text-gray-800 dark:text-gray-100">
-            Kaung Pyae's portfolio
+            Kaung Pyae&apos;s portfolio
           </p>
           <div className="border-e border-gray-300 dark:border-gray-600 h-full hidden md:block" />
 
