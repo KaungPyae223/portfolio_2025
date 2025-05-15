@@ -11,6 +11,7 @@ export const useGetAllProjects = () => {
     backend: string;
     demo: string;
     tech: string;
+    type: string;
   };
 
   const [data, setData] = useState<ProjectItem[]>([]);

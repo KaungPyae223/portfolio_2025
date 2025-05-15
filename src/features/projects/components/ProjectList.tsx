@@ -15,6 +15,7 @@ const ProjectList = () => {
     backend: string;
     demo: string;
     tech: string;
+    type: string;
   };
 
   const data: ProjectItem[] = useGetAllProjects();
@@ -24,7 +25,7 @@ const ProjectList = () => {
   const filteredProjects =
     activeFilter === "all"
       ? data
-      : data.filter((project) => project.type === activeFilter);
+      : data.filter((project: ProjectItem) => project.type === activeFilter);
 
   const filters = ["all", "frontend", "backend"];
 
