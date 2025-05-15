@@ -3,7 +3,7 @@
 import { Sun, Moon } from "lucide-react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -34,7 +34,7 @@ const NavBar = () => {
     document.documentElement.classList.toggle("dark", initialMode === "dark");
   }, []);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (!navRef.current) return;
 
     const currentScroll = window.scrollY;
@@ -49,15 +49,14 @@ const NavBar = () => {
     }
 
     setPreviousScroll(currentScroll);
-  };
+  }, [previousScroll]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [previousScroll]);
+  }, [handleScroll]);
 
   // Adjust container height based on nav height
   useEffect(() => {

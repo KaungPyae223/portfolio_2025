@@ -89,9 +89,6 @@ const PersonalInfo = () => {
 
         <div className="flex flex-wrap gap-4">
           <button className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-full transition-colors duration-300 shadow-md">
-            View Details
-          </button>
-          <button className="px-6 py-2 border border-yellow-500 text-gray-700 dark:text-gray-200 hover:text-white hover:bg-yellow-500 dark:hover:bg-yellow-600 rounded-full transition-colors duration-300 shadow-md">
             View CV
           </button>
         </div>

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import ProjectCard from "@/features/public/ProjectCard";
 import { useGetBestProject } from "../hooks/useGetBestProject";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +54,8 @@ const MyProject = () => {
 
   const data = useGetBestProject();
 
+  const router = useRouter();
+
   return (
     <div className="lg:mx-auto max-w-6xl m-5 my-10 pt-20 transition-colors duration-300">
       <p className="text-3xl font-semibold text-center homeProjectTitle text-gray-800 dark:text-gray-100 transition-colors duration-300">
@@ -82,7 +85,10 @@ const MyProject = () => {
             </motion.div>
           ))}
       </div>
-      <div className="homeProjectViewMore mt-10 px-6 py-3 rounded-full bg-yellow-300 text-gray-800 dark:text-gray-900 hover:bg-yellow-700 dark:hover:bg-yellow-600 w-fit mx-auto cursor-pointer transition-all duration-300 hover:text-white dark:hover:text-white shadow-md">
+      <div
+        onClick={() => router.push("/projects")}
+        className="homeProjectViewMore mt-10 px-6 py-3 rounded-full bg-yellow-300 text-gray-800 dark:text-gray-900 hover:bg-yellow-700 dark:hover:bg-yellow-600 w-fit mx-auto cursor-pointer transition-all duration-300 hover:text-white dark:hover:text-white shadow-md"
+      >
         View All Projects
       </div>
     </div>
