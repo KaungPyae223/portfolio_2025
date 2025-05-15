@@ -4,6 +4,7 @@ import gsap from "gsap";
 import React, { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const PersonalInfo = () => {
@@ -88,9 +89,14 @@ const PersonalInfo = () => {
         </div>
 
         <div className="flex flex-wrap gap-4">
-          <button className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-full transition-colors duration-300 shadow-md">
+          <Link
+            href={
+              "https://drive.google.com/file/d/1M81-zCYb8K5r5W-jUa7XeWvkae1G6r6h/view?usp=sharing"
+            }
+            className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-full transition-colors duration-300 shadow-md"
+          >
             View CV
-          </button>
+          </Link>
         </div>
       </div>
     </section>
