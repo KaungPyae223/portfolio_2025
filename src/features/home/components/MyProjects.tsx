@@ -55,19 +55,18 @@ const MyProject = () => {
   const router = useRouter();
 
   type ProjectItem = {
-    Projects: {
-      id: number;
-      image: string;
-      name: string;
-      description: string;
-      frontend: string;
-      backend: string;
-      demo: string;
-      tech: string;
-    };
+    id: number;
+    image: string;
+    name: string;
+    description: string;
+    frontend: string;
+    backend: string;
+    demo: string;
+    tech: string;
   };
 
   const data: ProjectItem[] = useGetBestProject();
+
 
   return (
     <div className="lg:mx-auto max-w-6xl m-5 my-10 pt-20 transition-colors duration-300">
@@ -79,7 +78,7 @@ const MyProject = () => {
           data.map((el, i) => (
             <motion.div
               className="project"
-              key={el.Projects.id}
+              key={el.id}
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
@@ -87,13 +86,13 @@ const MyProject = () => {
               custom={i}
             >
               <ProjectCard
-                image={el.Projects.image}
-                title={el.Projects.name}
-                description={el.Projects.description}
-                frontendLink={el.Projects.frontend}
-                backendLink={el.Projects.backend}
-                demoLink={el.Projects.demo}
-                tech={el.Projects.tech?.split("/") || []}
+                image={el.image}
+                title={el.name}
+                description={el.description}
+                frontendLink={el.frontend}
+                backendLink={el.backend}
+                demoLink={el.demo}
+                tech={el.tech?.split("/") || []}
               />
             </motion.div>
           ))}

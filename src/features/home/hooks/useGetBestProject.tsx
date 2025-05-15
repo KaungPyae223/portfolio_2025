@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supbaseClient";
 
 export const useGetBestProject = () => {
-  type ProjectItem = {
-    Projects: {
-      id: number;
-      image: string;
-      name: string;
-      description: string;
-      frontend: string;
-      backend: string;
-      demo: string;
-      tech: string;
-    };
+  type Project = {
+    id: number;
+    image: string;
+    name: string;
+    description: string;
+    frontend: string;
+    backend: string;
+    demo: string;
+    tech: string;
+  };
+
+  type BestProjectRecord = {
+    Projects: Project[];
   };
 
   const [data, setData] = useState<ProjectItem[]>([]);
@@ -25,7 +27,10 @@ export const useGetBestProject = () => {
 
       if (error) console.error("Supabase Error:", error);
       else {
-        setData(data);
+        const flattened = (data as BestProjectRecord[]).flatMap(
+          (item) => item.Projects
+        );
+        setData(flattened);
       }
     };
 
