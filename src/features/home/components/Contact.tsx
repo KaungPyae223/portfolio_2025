@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
@@ -92,13 +93,13 @@ const Contact = () => {
         <p className="mt-6 font-semibold contactUp">Follow on Social Media</p>
         <div className="flex flex-row my-3 gap-6 contactUp">
           <a href="https://github.com/KaungPyae223">
-            <img src="/GitHub.png" className="size-8" />
+            <Image width={50} height={50} alt="gitHub" src="/GitHub.png" className="size-8" />
           </a>
           <a href="https://www.facebook.com/profile.php?id=100013951484585">
-            <img src="/Facebook.png" className="size-8" />
+            <Image width={50} height={50} alt="facebook" src="/Facebook.png" className="size-8" />
           </a>
           <a href="https://www.linkedin.com/in/kaung-pyae-908324250/">
-            <img src="/Linkedin.png" className="size-8" />
+            <Image width={50} height={50} alt="linked in" src="/Linkedin.png" className="size-8" />
           </a>
         </div>
       </div>
