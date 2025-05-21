@@ -1,7 +1,5 @@
 import NavBar from "@/features/public/nav/NavBar";
 import "./globals.css";
-import Script from "next/script";
-import Analytics from "./analytics";
 
 export const metadata = {
   title: "Kaung Pyae Aung",
