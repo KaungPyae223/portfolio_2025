@@ -1,24 +1,27 @@
-"use client";
+import NavBar from "@/features/public/nav/NavBar";
+import "./globals.css";
+import Script from "next/script";
+import Analytics from "./analytics";
 
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+export const metadata = {
+  title: "Kaung Pyae Aung",
+  description: "Kaung Pyae Aung's portfolio website",
+};
 
-declare global {
-  interface Window {
-    gtag: (...args: any[]) => void;
-  }
-}
-
-export default function Analytics() {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (typeof window.gtag === "function") {
-      window.gtag("config", "G-XX8Y6TYW6D", {
-        page_path: pathname,
-      });
-    }
-  }, [pathname]);
-
-  return null;
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      
+      <body className="transition-colors duration-300 bg-white text-black dark:bg-gray-900 dark:text-white">
+        <header>
+          <NavBar />
+        </header>
+        <main>{children}</main>
+      </body>
+    </html>
+  );
 }
