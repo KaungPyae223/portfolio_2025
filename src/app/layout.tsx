@@ -1,5 +1,7 @@
+import { Analytics } from '@vercel/analytics/react';
 import NavBar from "@/features/public/nav/NavBar";
 import "./globals.css";
+import Script from 'next/script';
 
 export const metadata = {
   title: "Kaung Pyae Aung",
@@ -11,6 +13,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       
@@ -19,6 +22,15 @@ export default function RootLayout({
           <NavBar />
         </header>
         <main>{children}</main>
+        <Analytics />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+          `}
+        </Script>
       </body>
     </html>
   );
