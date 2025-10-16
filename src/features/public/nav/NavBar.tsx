@@ -20,7 +20,7 @@ const NavBar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [previousScroll, setPreviousScroll] = useState<number>(0);
+  const previousScroll = useRef<number>(0);
 
   // Sync initial state from localStorage
   useEffect(() => {
@@ -34,13 +34,17 @@ const NavBar = () => {
     document.documentElement.classList.toggle("dark", initialMode === "dark");
   }, []);
 
-  const handleScroll = useCallback(() => {
+  const handleScroll = () => {
+    
     if (!navRef.current) return;
 
     const currentScroll = window.scrollY;
+    const previousScrollValue = previousScroll.current;
+
+    console.log(currentScroll, previousScrollValue);
 
     if (
-      currentScroll > previousScroll &&
+      currentScroll > previousScrollValue &&
       currentScroll > navRef.current.offsetHeight
     ) {
       navRef.current.classList.add("-translate-y-full");
@@ -48,15 +52,15 @@ const NavBar = () => {
       navRef.current.classList.remove("-translate-y-full");
     }
 
-    setPreviousScroll(currentScroll);
-  }, [previousScroll]);
+    previousScroll.current = currentScroll;
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleScroll]);
+  }, []);
 
   // Adjust container height based on nav height
   useEffect(() => {
